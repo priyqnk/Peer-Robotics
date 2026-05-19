@@ -1,42 +1,72 @@
-# Peer Robotics: Resource Allocation and Route Optimization
+# Peer Robotics — Resource Allocation & Route Optimization
 
-This project implements a generalized version of the **Law of Optimality** trick to solve simultaneous resource allocation and route optimization problems, specifically applied to Facility Location and Path Optimization (FLPO).
+MATLAB implementation of **simultaneous facility location and path optimization** (FLPO) using **Deterministic Annealing (DA)** and a generalized **Law of Optimality** heuristic. Assigns resource locations and routes in static sensor networks while minimizing total distortion.
 
 ## Overview
 
-The implementation uses **Deterministic Annealing (DA)** to optimize the placement of resources and the paths between them and sensors/centroids. The algorithm is designed to handle static and dynamic networks efficiently.
+The algorithm jointly optimizes:
 
-### Key Components
-- **Deterministic Annealing (DA)**: An optimization framework used to find global minima in complex, non-convex landscapes.
-- **Law of Optimality**: A specific heuristic or constraint applied during the DA process to ensure path optimality alongside resource placement.
-- **MATLAB Implementation**: Core logic is contained in generalized MATLAB scripts for easy simulation and visualization.
+1. **Where** to place facilities (resources) relative to sensor centroids
+2. **How** to route paths between sensors, resources, and a destination
+
+Deterministic Annealing gradually reduces a temperature parameter to escape local minima in this non-convex problem.
+
+## Features
+
+- **Deterministic Annealing (DA)** — Global optimization over placement and routing
+- **Law of Optimality** — Heuristic constraint applied during annealing for path-quality guarantees
+- **Distortion metrics** — Separate sensor-to-resource (`Distortion1`) and resource-to-resource (`Distortion2`) cost functions
+- **Visualization** — Plots centroids, resources, destination, and association paths on completion
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Primary | MATLAB R2020b+ |
+| Auxiliary | Python 3.x (`Project.py` — supporting calculations) |
 
 ## Project Structure
 
-- `Law_Of_Optimality.m`: The main script implementing the optimization algorithm.
-- `Distortion1.m`: Utility function for computing distortion (distance) metrics between sensors and resources.
-- `Distortion2.m`: Utility function for computing internal resource-to-resource distortion.
-- `Report.docx`: Detailed project report and analysis.
-- `Problem Statement.jpg`: Visual description of the problem setup.
+```
+Peer-Robotics/
+├── Law_Of_Optimality.m      # Main optimization script
+├── Distortion1.m            # Sensor ↔ resource distortion
+├── Distortion2.m            # Resource ↔ resource distortion
+├── Project.py               # Auxiliary Python utilities
+├── Report.docx              # Methodology and results write-up
+├── Problem Statement.jpg    # Problem diagram
+└── README.md
+```
 
-## Installation & Usage
+## Getting Started
 
 ### Prerequisites
-- MATLAB (R2020b or later recommended)
-- (Optional) Python 3.x for auxiliary scripts
 
-### Running the Optimization
-1. Open MATLAB and navigate to the project directory.
+- MATLAB R2020b or later
+- (Optional) Python 3.x with NumPy for `Project.py`
+
+### Installation
+
+```bash
+git clone https://github.com/priyqnk/Peer-Robotics.git
+cd Peer-Robotics
+```
+
+### Usage
+
+1. Open MATLAB and set the working directory to the project folder.
 2. Run the main script:
+
    ```matlab
    Law_Of_Optimality
    ```
-3. The script will output the temperature (T) during the annealing process and generate a final visualization plot showing:
-   - Centroids (Blue Triangles)
-   - Resources (Red Circles)
-   - Destination (Black Diamond)
-   - Association paths
+
+3. Monitor temperature `T` during annealing. On completion, the plot shows:
+   - **Blue triangles** — Sensor centroids
+   - **Red circles** — Placed resources
+   - **Black diamond** — Destination
+   - **Lines** — Optimized association paths
 
 ## Research Context
 
-This work is informed by research in "Simultaneous Facility Location and Path Optimization in Static and Dynamic Networks." The `Report.docx` contains a deeper exploration of the methodology and results.
+This work draws on *Simultaneous Facility Location and Path Optimization in Static and Dynamic Networks*. See `Report.docx` for full methodology, parameter choices, and experimental results.
