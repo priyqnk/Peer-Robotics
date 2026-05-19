@@ -22,8 +22,7 @@ Deterministic Annealing gradually reduces a temperature parameter to escape loca
 
 | Component | Technology |
 |-----------|------------|
-| Primary | MATLAB R2020b+ |
-| Auxiliary | Python 3.x (`Project.py` — supporting calculations) |
+| Language | MATLAB R2020b+ |
 
 ## Project Structure
 
@@ -32,10 +31,11 @@ Peer-Robotics/
 ├── Law_Of_Optimality.m      # Main optimization script
 ├── Distortion1.m            # Sensor ↔ resource distortion
 ├── Distortion2.m            # Resource ↔ resource distortion
-├── Project.py               # Auxiliary Python utilities
 ├── Report.docx              # Methodology and results write-up
 ├── Problem Statement.jpg    # Problem diagram
-└── README.md
+├── IMG_3576.JPG / IMG_3577.JPG   # Supplementary figures
+└── Research Papers/
+    └── Research Paper - Simultaneous Facility Location and Path Optimization.pdf
 ```
 
 ## Getting Started
@@ -43,7 +43,6 @@ Peer-Robotics/
 ### Prerequisites
 
 - MATLAB R2020b or later
-- (Optional) Python 3.x with NumPy for `Project.py`
 
 ### Installation
 
@@ -69,4 +68,4 @@ cd Peer-Robotics
 
 ## Research Context
 
-This work draws on *Simultaneous Facility Location and Path Optimization in Static and Dynamic Networks*. See `Report.docx` for full methodology, parameter choices, and experimental results.
+This work draws on *Simultaneous Facility Location and Path Optimization in Static and Dynamic Networks*. See `Report.docx` and the PDF in `Research Papers/` for full methodology, parameter choices, and experimental results.
