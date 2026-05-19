@@ -1,4 +1,4 @@
-function D1 = Distortion1_Ver2(X, Y, M, N, K, C)
+function D1 = Distortion1(X, Y, M, N, K, C)
     X = X'; 
     X = X(:); 
     X = X';

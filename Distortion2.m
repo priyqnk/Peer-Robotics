@@ -1,4 +1,4 @@
-function D2 = Distortion2_Ver2(Y1, Y2, K, N)
+function D2 = Distortion2(Y1, Y2, K, N)
     Y1 = Y1'; 
     Y1 = Y1(:); 
     Y1 = Y1';

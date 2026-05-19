@@ -13,9 +13,9 @@ The implementation uses **Deterministic Annealing (DA)** to optimize the placeme
 
 ## Project Structure
 
-- `Law_Of_Optimality_Ver2_Generalized_Updated.m`: The main script implementing the optimization algorithm.
-- `Distortion1_Ver2.m`: Utility function for computing distortion (distance) metrics between sensors and resources.
-- `Distortion2_Ver2.m`: Utility function for computing internal resource-to-resource distortion.
+- `Law_Of_Optimality.m`: The main script implementing the optimization algorithm.
+- `Distortion1.m`: Utility function for computing distortion (distance) metrics between sensors and resources.
+- `Distortion2.m`: Utility function for computing internal resource-to-resource distortion.
 - `Report.docx`: Detailed project report and analysis.
 - `Problem Statement.jpg`: Visual description of the problem setup.
 
@@ -29,7 +29,7 @@ The implementation uses **Deterministic Annealing (DA)** to optimize the placeme
 1. Open MATLAB and navigate to the project directory.
 2. Run the main script:
    ```matlab
-   Law_Of_Optimality_Ver2_Generalized_Updated
+   Law_Of_Optimality
    ```
 3. The script will output the temperature (T) during the annealing process and generate a final visualization plot showing:
    - Centroids (Blue Triangles)

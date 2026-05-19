@@ -39,9 +39,9 @@ while(T > Tmin)
     while 1
         
         % Association Probabilities
-        D1 = Gamma1*Distortion1_Ver2(X, Y, M, N, K, C);
-        D2 = Distortion2_Ver2(Y, Y, K, N);
-        Dr = Distortion2_Ver2(R, Y, K, N);
+        D1 = Gamma1*Distortion1(X, Y, M, N, K, C);
+        D2 = Distortion2(Y, Y, K, N);
+        Dr = Distortion2(R, Y, K, N);
         a1 = repmat(min(D2')',[1 K]);
         a2 = repmat(min(Dr')',[1 K]);
         a3 = repmat(min(D1')', [1 K]);
@@ -136,9 +136,9 @@ Dr = Dr + a2;
 % Y = Y.*(ones(K,1)*Xstd) + ones(K,1)*Xmean;
 % C = [4 7];
 % C = [250, 250];
-D1 = Gamma1*Distortion1_Ver2(X, Y, M, N, K, C);
-D2 = Distortion2_Ver2(Y, Y, K, N);
-Dr = Distortion2_Ver2(R, Y, K, N);
+D1 = Gamma1*Distortion1(X, Y, M, N, K, C);
+D2 = Distortion2(Y, Y, K, N);
+Dr = Distortion2(R, Y, K, N);
 PA = diag(Pa);
 %V0 = round(V0); V{1} = round(V{1}); V{2} = round(V{2});
 %V{3} = round(V{3});
