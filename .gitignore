@@ -1,0 +1,25 @@
+# MATLAB
+*.asv
+*.mat
+*.fig
+*.mex*
+*.p
+*.slxc
+*.simulink_project
+*.mldatx
+*.mlappinstall
+*.mliv
+*.mlpkginstall
+*.vnt
+*.sltx
+*.slxp
+
+# CPH (Codeforces/Competition Helper)
+.cph/
+
+# Python
+__pycache__/
+
+# OS generated files
+.DS_Store
+Thumbs.db
